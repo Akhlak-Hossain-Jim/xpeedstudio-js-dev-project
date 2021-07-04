@@ -73,7 +73,7 @@ function Home() {
       </div>
       {search &&
         <div className="table">
-          <p>Showing results for {`'${search}'`}</p>
+          <p>Showing results for {`'${search}'`}{searchResult.length !== 0 ? `, ${searchResult.length} ${searchResult.length === 1 ? `result` : `results`} found` : null}</p>
           {searchResult.length !== 0 ? <div className="table-col">
             {header[0].id && <div className="table-header">{header[0].id.title}</div>}
             {header[0].name && <div className="table-header">{header[0].name.title}</div>}
@@ -104,10 +104,10 @@ function Home() {
             row && <Draggable>
               {row.map(d => (
                 <div key={d.id} className="table-col">
-                  {header[0].id && <div className="table-row">{d.id}</div>}
-                  {header[0].name && <div className="table-row">{d.name}</div>}
-                  {header[0].message && <div className="table-row">{d.message}</div>}
-                  {header[0].created_at && <div className="table-row">{d.created_at}</div>}
+                  {header[0].id.hidden ? null : <div className="table-row">{d.id}</div>}
+                  {header[0].name.hidden ? null : <div className="table-row">{d.name}</div>}
+                  {header[0].message.hidden ? null : <div className="table-row">{d.message}</div>}
+                  {header[0].created_at.hidden ? null : <div className="table-row">{d.created_at}</div>}
                 </div>
               ))}
             </Draggable>
