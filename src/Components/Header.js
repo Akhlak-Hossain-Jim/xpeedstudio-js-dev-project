@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 // style import
-import '../styles/header.scss'
+import "../styles/header.scss";
 
 function Header() {
   const [toggler, setToggler] = useState(false);
@@ -26,6 +26,10 @@ function Header() {
   }, [location.pathname]);
 
   useEffect(() => {
+    setMOver(0);
+  }, [location.pathname]);
+
+  useEffect(() => {
     location.pathname === "/"
       ? setactiveNav(1)
       : location.pathname === "/get-form/"
@@ -41,7 +45,7 @@ function Header() {
         <div className="header__box">
           <div className="header__logo">
             <Link name="logo" to="/">
-              <img src='/xpeedstudio_logo_header.png' alt="" />
+              <img src="/xpeedstudio_logo_header.png" alt="" />
             </Link>
           </div>
 
