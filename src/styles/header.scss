@@ -1,0 +1,249 @@
+header {
+    position: relative;
+    &.genarel_header {
+      width: 100vw;
+      padding: 0 30px;
+      background-color: rgba(247, 247, 247, 0.95);
+      box-shadow: 0 0 15px rgba(189, 189, 189, 0.562);
+      position: fixed !important;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      @media (min-width: 769px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media (max-width: 768px) {
+        padding: 0 10px;
+      }
+    }
+    .header__box {
+      @media (max-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header__logo {
+        margin: 20px 0 20px 30px;
+        @media (max-width: 768px) {
+          margin: 20px 0 0 10px;
+        }
+        a {
+          &:focus {
+            outline: dashed 2px #0b5750;
+          }
+        }
+        img {
+          max-width: 280px !important;
+          max-height: auto !important;
+          @media (max-width: 768px) {
+            width: 250px;
+            padding: 0;
+          }
+          @media (max-width: 386px) {
+            width: 70vw;
+            padding: 0;
+          }
+        }
+      }
+    }
+    .big__nav {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 30px;
+      @media (max-width: 768px) {
+        display: none !important;
+      }
+      .nav__items {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 0 16px;
+        margin: 16px 0;
+        color: #000;
+        text-decoration: none;
+        transition: 0.5s;
+        cursor: pointer;
+        position: relative;
+        &.active {
+          color: #0b5750;
+        }
+        &.hover {
+          color: #0b5750;
+        }
+        &.nover {
+          color: rgb(177, 176, 176);
+        }
+        @media (max-width: 1440px) {
+          font-size: 14px;
+        }
+        @media (max-width: 768px) {
+          font-size: 18px;
+        }
+        &:focus {
+          outline: dashed 2px #0b5750;
+        }
+        &:after {
+          content: "";
+          height: 2px;
+          background: #0b5750;
+          // width: 100%;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -6px;
+          transform-origin: left center;
+          transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+          opacity: 0;
+          transform: scaleX(0);
+        }
+  
+        &:hover {
+          &:after {
+            opacity: 1;
+            transform: scaleX(1);
+          }
+        }
+      }
+      &.phone__nav {
+        display: flex !important;
+        background-color: rgba(223, 223, 223, 0.892);
+        flex-direction: column;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 80vw;
+        transition: all 1s;
+        z-index: 100;
+        animation: fromleft 1s !important;
+        @keyframes fromleft {
+          from {
+            top: -100px !important;
+            margin-left: -100%;
+            border-radius: 0 0 300% 0;
+            height: 10vh;
+          }
+  
+          to {
+            top: 0;
+            margin-left: 0%;
+            height: 100vh;
+          }
+        }
+        @media (min-width: 769px) {
+          display: none !important;
+        }
+  
+        .nav__items {
+          display: block;
+          text-align: center;
+          &.active {
+            color: #0b5750;
+          }
+          &.hover {
+            color: #0b5750;
+          }
+          &.nover {
+            color: rgb(61, 61, 61);
+          }
+        }
+      }
+    }
+    .phone__nav__icon {
+      margin: auto 20px;
+      position: relative !important;
+      height: 30px;
+      width: 30px;
+  
+      @media (min-width: 769px) {
+        display: none;
+      }
+      .hamInner {
+        z-index: 12;
+        position: absolute;
+        top: 50%;
+        right: 0px;
+        width: 25px;
+        height: 3px;
+        border-radius: 4px;
+        background-color: #0b5750;
+        transform: rotate(0deg);
+        &::after {
+          bottom: -10px;
+          transform: rotate(0deg);
+          content: "";
+          display: block;
+          position: absolute;
+          right: 0px;
+          width: 25px;
+          height: 3px;
+          border-radius: 4px;
+          background-color: #0b5750;
+        }
+        &::before {
+          top: -10px;
+          opacity: 1;
+          content: "";
+          display: block;
+          position: absolute;
+          right: 0px;
+          width: 25px;
+          height: 3px;
+          border-radius: 4px;
+          background-color: #0b5750;
+        }
+        &.active {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          width: 0;
+          height: 0;
+          border-radius: 4px;
+          background-color: #0b5750;
+          transform: rotate(0deg);
+          &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 12px;
+            bottom: 0;
+            right: 0;
+            left: 2.5px;
+            width: 30px;
+            height: 2px;
+            border-radius: 4px;
+            background-color: #0b5750;
+            transition-timing-function: ease;
+            transition-duration: 0.15s;
+            transition-property: transform;
+            transform: rotate(45deg);
+          }
+          &::before {
+            opacity: 1;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 12px;
+            bottom: 0;
+            right: 0;
+            left: 2.5px;
+            width: 30px;
+            height: 2px;
+            border-radius: 4px;
+            background-color: #0b5750;
+            transition-timing-function: ease;
+            transition-duration: 0.15s;
+            transition-property: transform;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
