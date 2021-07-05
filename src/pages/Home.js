@@ -77,7 +77,7 @@ function Home() {
         />
         <BiSearchAlt className="icon" />
       </div>
-      <div className="over" style={{ width: "100vw", overflowX: "scroll" }}>
+      <div className="over">
         {search && (
           <div className="table">
             <p>
