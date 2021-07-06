@@ -32,9 +32,13 @@ function Home() {
   useEffect(() => {
     row &&
       setsearchResult(
-        row.filter((d) => {
-          return d.name.toLowerCase().includes(search.toLowerCase());
-        })
+        search.match(/^[a-zA-Z]+$/)
+          ? row.filter((d) => {
+              return d.name.toLowerCase().includes(search.toLowerCase());
+            })
+          : row.filter((d) => {
+              return d.id.toString().includes(search.toString());
+            })
       );
   }, [search, row]);
 
