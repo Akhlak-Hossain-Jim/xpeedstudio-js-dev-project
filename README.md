@@ -1,3 +1,5 @@
+# xpeedstudio-js-dev-project [demo](https://xpeedstudio-js-dev-test.web.app/)
+
 This project is bootstraped with `create-react-app` with `cra-template-pwa` template by [Akhlak Hossain Jim](http://akhlak-hossain-jim.github.io/).
 
 ## How to run it on local machine ?
@@ -19,3 +21,5 @@ This project is bootstraped with `create-react-app` with `cra-template-pwa` temp
         - Builds the app for production to the `build` folder.
         - It correctly bundles React in production mode and optimizes the build for the best performance.
         - The build is minified and the filenames include the hashes. Your app is ready to be deployed!
+
+for any further details, [Akhlak Hossain Jim](http://akhlak-hossain-jim.github.io/).
