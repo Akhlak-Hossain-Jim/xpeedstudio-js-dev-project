@@ -76,7 +76,7 @@ function Home() {
       <div className="search">
         <input
           type="text"
-          placeholder="Search here by Name"
+          placeholder="Search here by Name or ID"
           onChange={(e) => setsearch(e.target.value)}
         />
         <BiSearchAlt className="icon" />
